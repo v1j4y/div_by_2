@@ -1,5 +1,5 @@
 # Initialize
-AC_INIT([tyson], [0.1])
+AC_INIT([div_by_2], [1.0])
 AM_PROG_AR
 LT_INIT
 AC_CONFIG_MACRO_DIR([m4])
