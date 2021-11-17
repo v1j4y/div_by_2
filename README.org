@@ -2,6 +2,8 @@
 #+author: vijay gopal chilkuri
 #+email: vijay.gopal.c@gmail.com
 
+![build](https://github.com/github/v1j4y/actions/workflows/test-build.yml/badge.svg)
+
 * Introduction
 
 A test package to test julia tooling with a c library.
