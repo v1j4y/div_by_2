@@ -1,0 +1,12 @@
+#+name: Divide by 2
+#+author: vijay gopal chilkuri
+#+email: vijay.gopal.c@gmail.com
+
+* Introduction
+
+A test package to test julia tooling with a c library.
+
+** Goal 
+
+is to create a julia package which calls the custom C 
+function to divide by 2.
