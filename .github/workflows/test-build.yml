@@ -1,0 +1,43 @@
+name: test-build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  x86_ubuntu:
+
+    runs-on: ubuntu-latest
+    name: x86 Ubuntu latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: sudo apt-get install julia
+
+    - name: Install trexio
+      run: |
+        export VERSION=1.0.0
+        wget https://github.com/v1j4y/div_by_2/releases/download/v${VERSION}/trexio-${VERSION}.tar.gz
+        tar -zxf trexio-${VERSION}.tar.gz
+        cd div_by_2-${VERSION}
+        ./configure --prefix=/usr
+        make -j 8
+        sudo make install
+
+    - name: Build
+      run: |
+        ./autogen.sh
+        ./configure 
+        make -j 8
+
+    - name: Run test
+      run: |
+        make -j check
+
+    - name: Dist test
+      run: |
+        make distcheck
