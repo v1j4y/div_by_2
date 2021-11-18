@@ -20,7 +20,7 @@ jobs:
 
     - name: Install div_by_2
       run: |
-        export VERSION=1.0
+        export VERSION=2.0
         wget https://github.com/v1j4y/div_by_2/releases/download/v${VERSION}/div_by_2-${VERSION}.tar.gz
         tar -zxf div_by_2-${VERSION}.tar.gz
         cd div_by_2-${VERSION}
